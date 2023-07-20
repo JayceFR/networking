@@ -1,4 +1,5 @@
 import socket
+import json
 
 HEADER = 64
 PORT = 5050
@@ -20,5 +21,9 @@ def send(msg):
     print(client.recv(2048).decode(FORMAT))
 
 send("Hello World")
+input()
 send("My aji is in London")
+input()
+my_dict = '{"color" : "red", "alive": True, "enemy" : False}'
+send(my_dict)
 send(DISCONNECT_MESSAGE)
